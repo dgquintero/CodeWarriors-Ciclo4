@@ -6,7 +6,8 @@
   "scripts": {
     "build": "babel src -d dist --source-maps",
     "start": "nodemon src/index.js --exec babel-node",
-    "serve": "node dist/index.js"
+    "serve": "node dist/index.js",
+    "clean": "rimraf dist"
   },
   "repository": {
     "type": "git",
@@ -20,7 +21,11 @@
   },
   "homepage": "https://github.com/dgquintero/CodeWarriors-Ciclo4#readme",
   "dependencies": {
-    "express": "^4.17.1"
+    "express": "^4.17.1",
+    "express-graphql": "^0.12.0",
+    "graphql": "^15.7.2",
+    "graphql-tools": "^8.2.0",
+    "rimraf": "^3.0.2"
   },
   "devDependencies": {
     "@babel/cli": "^7.16.0",
