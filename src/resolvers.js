@@ -1,23 +1,25 @@
-import { tasks } from "./sample";
+import User from "./models/User";
 
 
 export const resolvers = {
       Query: {
-        hello: () => {
-          return 'Hello world with Graphql'
-        },
-        greet(root , { name }){
-          return `Hello ${name}`
-        },
-        tasks() {
-          return tasks
-        }
+        allUsers: async () => {
+          return await User.find();
+      }
       },
       Mutation: {
-        createTask( _, { input } ) {
-          input._id = tasks.length;
-          tasks.push(input)
-          return input
-        }
+        createUser: async (_, { input }) => {
+          const newUser = new User(input);
+          await newUser.save();
+          return newUser;
+          },
+  
+        async updateUser(_, { _id, input }) {
+              return await User.findByIdAndUpdate(_id, input, { new: true});
+              },
+  
+        async deleteUser(_, { _id }){
+             return await User.findByIdAndDelete(_id);
+          }
       }
 };

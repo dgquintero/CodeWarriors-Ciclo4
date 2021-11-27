@@ -3,26 +3,41 @@ import { resolvers } from './resolvers'
 
 const typeDefs = `
   type Query {
-    hello: String
-    greet(name: String!): String
-    tasks: [Task]
-  }
-
-  type Task {
-    _id: ID
-    title: String!
-    description: String!
-    number: Int
+    allUsers: [User]
   }
 
   type Mutation {
-    createTask(input: TaskInput): Task
+    createUser(input: UserInput):User
+    updateUser(_id: ID, input: UserInputUpdate): User
+    deleteUser(_id: ID): User
   }
 
-  input TaskInput {
-    title: String!
-    description: String!
-    number: Int
+  type User {
+    _id: ID!
+    full_name: String!
+    cc: String!
+    email: String!
+    password: String!
+    user_type: String!
+    status: String!
+  }
+
+  input UserInput {
+    full_name: String!
+    cc: String!
+    email: String!
+    password: String!
+    user_type: String!
+    status: String!
+  }
+
+  input UserInputUpdate {
+    full_name: String
+    cc: String
+    email: String
+    password: String
+    user_type: String
+    status: String
   }
 `;
 
