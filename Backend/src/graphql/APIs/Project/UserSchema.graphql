@@ -1,0 +1,55 @@
+type Query {
+    allProjects: [Project]
+}
+
+type Mutation {
+    createProject(input: ProjectInput):Project
+    updateProject(_id: ID!, input: ProjectInputUpdate): Project
+    deleteProject(_id: ID!): Project
+}
+
+type Project {
+    _id: ID!
+    project_id: String!
+    project_name: String!
+    general_objectives: String!
+    specific_objectives: String!
+    project_type: String!
+    budget: String!
+    start_date : String!
+    end_date : String!
+    leader_name: String!
+    leader_cc: String!
+    project_status: String!
+    project_stage: String!
+}
+
+input ProjectInput {
+    project_id: String!
+    project_name: String!
+    general_objectives: String!
+    specific_objectives: String!
+    project_type: String!
+    budget: String!
+    start_date : String!
+    end_date : String!
+    leader_name: String!
+    leader_cc: String!
+    project_status: String!
+    project_stage: String!
+}
+
+input ProjectInputUpdate {
+    project_id: String
+    project_name: String
+    general_objectives: String
+    specific_objectives: String
+    project_type: String
+    budget: String
+    start_date : String
+    end_date : String
+    leader_name: String
+    leader_cc: String
+    project_status: String
+    project_stage: String
+}

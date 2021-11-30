@@ -22,11 +22,11 @@ const projectSchema = new Schema({
       required: true
   },
   start_date : {
-      type: String,
+      type: Date,
       required: true
   },
   end_date : {
-      type: String,
+      type: Date,
       required: true
   },
   leader_name : {
@@ -48,4 +48,4 @@ const projectSchema = new Schema({
 
 });
 
-export default model("Prject", projectSchema)
+export default model("Project", projectSchema)
