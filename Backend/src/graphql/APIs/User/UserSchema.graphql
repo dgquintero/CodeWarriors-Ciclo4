@@ -4,8 +4,8 @@ type Query {
 
 type Mutation {
     createUser(input: UserInput):User
-    updateUser(_id: ID, input: UserInputUpdate): User
-    deleteUser(_id: ID): User
+    updateUser(_id: ID!, input: UserInputUpdate): User
+    deleteUser(_id: ID!): User
 }
 
 type User {
