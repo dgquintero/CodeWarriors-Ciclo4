@@ -1,6 +1,7 @@
 type Query {
     allProjects: [Project],
     projectById(_id: String!): Project,
+    projectByLeader(leader_cc: String!): [Project]
 }
 
 type Mutation {
@@ -17,7 +18,7 @@ type Project {
     project_name: String!
     general_objetives: String!
     specific_objetives: String!
-    budget: Number!
+    budget: Int!
     start_date: Date!
     end_date: Date!
     leader_name: String!
@@ -31,7 +32,7 @@ input ProjectInput {
     project_name: String!
     general_objetives: String!
     specific_objetives: String!
-    budget: Number!
+    budget: Int!
     start_date: Date!
     end_date: Date!
     leader_name: String!
@@ -45,7 +46,7 @@ input ProjectInputUpdate {
     project_name: String
     general_objetives: String
     specific_objetives: String
-    budget: Number
+    budget: Int
     start_date: Date
     end_date: Date
     leader_name: String
