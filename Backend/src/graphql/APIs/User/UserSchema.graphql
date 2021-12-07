@@ -1,9 +1,10 @@
 type Query {
     allUsers: [User]
+    verifyUser(email: String!, password: String!): [User]
 }
 
 type Mutation {
-    createUser(input: UserInput):User
+    createUser(input: UserInput): User
     updateUser(_id: ID!, input: UserInputUpdate): User
     deleteUser(_id: ID!): User
 }
@@ -24,7 +25,12 @@ input UserInput {
     email: String!
     password: String!
     user_type: String!
-    status: String!
+    status: TaskStateEnum!
+    
+    # {
+    #     type: TaskStateEnum,
+    #     defaultValue: TaskStateEnum.getValue("PENDIENTE")
+    #     }
 }
 
 input UserInputUpdate {
@@ -34,4 +40,9 @@ input UserInputUpdate {
     password: String
     user_type: String
     status: String
+}
+
+enum TaskStateEnum {  
+  PENDIENTE
+  AUTORIZADO
 }
