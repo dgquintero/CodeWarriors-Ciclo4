@@ -11,8 +11,8 @@ function App() {
     <BrowserRouter>
       <Navigation/>
       <Routes>
-        <Route exact path="/" component={<FormularioUser/>}/>
-        <Route exact path="/GestionUsuario" component={<UserList/>}/>
+        <Route exact path="/" element={<FormularioUser/>}/>
+        <Route exact path="/GestionUsuario" element={<UserList/>}/>
       </Routes>
     </BrowserRouter>
   );
