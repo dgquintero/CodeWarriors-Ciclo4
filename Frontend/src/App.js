@@ -1,18 +1,18 @@
 import React from "react";
+import './App.css';
 import { Routes, Route, BrowserRouter} from "react-router-dom";
 import "bootswatch/dist/lux/bootstrap.min.css"
 
-import FormularioUser from './components/FormularioUser'
-import Navigation from './components/Navbar'
-import UserList from './components/GestionUsuario'
+
+import Login from './components/Login'
+import UserList from './components/UserList'
 
 function App() {
   return (
-    <BrowserRouter>
-      <Navigation/>
+    <BrowserRouter>      
       <Routes>
-        {/* <Route exact path="/" element={<FormularioUser/>}/> */}
-        <Route exact path="/GestionUsuario" element={<UserList/>}/>
+        <Route exact path="/" element={<Login/>}/>
+        <Route exact path="/Users" element={<UserList/>}/>
       </Routes>
     </BrowserRouter>
   );
