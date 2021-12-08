@@ -11,7 +11,7 @@ function App() {
     <BrowserRouter>
       <Navigation/>
       <Routes>
-        <Route exact path="/" element={<FormularioUser/>}/>
+        {/* <Route exact path="/" element={<FormularioUser/>}/> */}
         <Route exact path="/GestionUsuario" element={<UserList/>}/>
       </Routes>
     </BrowserRouter>

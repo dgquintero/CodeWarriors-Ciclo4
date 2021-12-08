@@ -23,18 +23,33 @@ const UserList = () => {
     if (loading) return <p> Loading users ... </p>
     if (error) return <p>{error.message}</p>;
     console.log(data)
+
     return (
         <div className="row">
             <div className="col-md-6 offset-md-3">
-                <ul>
-                    {data.allUsers.map(({_id, full_name, cc, email, password, user_type, status}) => (
-                        <li>
-                        <h4>{full_name}</h4>
-                        <h4>{email}</h4>
-                        {/*...User*/}
-                        </li>
-                    ))}
-                </ul>  
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Nombre</th>
+                            <th>Identificación</th>
+                            <th>Email</th>
+                            <th>Rol</th>
+                            <th>Estado</th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+                        {data.allUsers.map(({_id, full_name, cc, email, user_type, status}) => (
+                            <tr key={_id}>
+                                <td>{full_name}</td>
+                                <td>{cc}</td>
+                                <td>{email}</td>
+                                <td>{user_type}</td>
+                                <td>{status}</td>
+                            </tr>
+                        ))}
+                    </tbody> 
+                </table> 
             </div>
         </div>
     )
