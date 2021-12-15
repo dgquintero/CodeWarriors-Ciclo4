@@ -17,16 +17,32 @@ const Navigation = () => {
                                 <Link className="nav-link" to="/Users">Usuarios</Link>
                             </li>
                             
-                            <li className="nav-item">
+                            {/* <li className="nav-item">
                                 <Link className="nav-link" to="/Proyectos">Proyectos</Link>
+                            </li> */}                            
+
+                            <li className="nav-item dropdown">
+                                <a className="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                    Proyectos
+                                </a>
+                                <ul className="dropdown-menu" aria-labelledby="navbarDropdown">
+                                    <li>
+                                        <Link className="nav-link" to="/Proyectos">Proyectos</Link>
+                                    </li>
+                                    <li>
+                                        <Link className="nav-link" to="/projects/register">Registro</Link>
+                                    </li>
+                                </ul>
                             </li>
+                            
+
 
                             <li className="nav-item">
                                 <Link className="nav-link" to="/Avances">Avances</Link>
                             </li>
 
                             <li className="nav-item">
-                                <Link className="nav-link" to="/Estudiantes">Estudiantes</Link>
+                                <Link className="nav-link" to="/students">Estudiantes</Link>
                             </li>
                         
                         </ul>
