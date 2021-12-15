@@ -12,23 +12,18 @@ const Navigation = () => {
                     </button>
                     <div className="collapse navbar-collapse" id="navbarNav">
                         <ul className="navbar-nav">
-
                             <li className="nav-item">
                                 <NavLink className="nav-link" activeClassName="active" to="/users" exact>Usuarios</NavLink>
                             </li>
-
                             <li className="nav-item">
-                                <NavLink className="nav-link"  activeClassName="active" to="/projects" exact>Proyectos</NavLink>
+                                <NavLink className="nav-link" activeClassName="active" to="/projects" exact>Proyectos</NavLink>
                             </li>
-
                             <li className="nav-item">
                                 <NavLink className="nav-link" activeClassName="active" to="/Avances" exact>Avances</NavLink>
                             </li>
-
                             <li className="nav-item">
-                                <NavLink className="nav-link" activeClassName="active" to="/Estudiantes" exact>Estudiantes</NavLink>
+                                <NavLink className="nav-link" activeClassName="active" to="/students" exact>Estudiantes</NavLink>
                             </li>
-
                         </ul>
                     </div>
                 </div>

@@ -63,7 +63,7 @@ const ProjectList = () => {
             <div className="container">
                 <div className="row mt-3">
                     <h2>Lista de Proyectos
-                        <Link to={`/productos/create-`}>
+                        <Link to={`/projects/register`}>
                             <button
                                 className="btn btn-success float-end"
                             >
