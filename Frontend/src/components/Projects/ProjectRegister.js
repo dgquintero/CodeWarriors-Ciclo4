@@ -27,11 +27,18 @@ const ProjectRegister = () => {
     })
 
     const onChangeHandler = e => {
-        const { name, value } = e.target;
-        setState(prevState => ({
-            ...prevState,
-            [name]: value
-        }));
+        const { name, value } = e.target;        
+        if (name === "budget"){
+            setState(prevState => ({
+                ...prevState,
+                [name]: parseInt(value)
+            }));
+        }else{
+            setState(prevState => ({
+                ...prevState,
+                [name]: value
+            }));
+        }
     };
 
     const onChangeStatus = e => {
@@ -167,7 +174,7 @@ const ProjectRegister = () => {
                             className="form-control"
                             aria-label="Presupuesto"
                             aria-describedby="inputGroup-sizing-default"
-                            defaultValue={state.budget}
+                            defaultValue={parseInt(state.budget)}
                             onChange={onChangeHandler}
                         />
                     </div>
