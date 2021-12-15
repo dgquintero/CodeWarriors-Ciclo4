@@ -15,8 +15,8 @@ const ProjectRegister = () => {
     const [state, setState] = useState({
         project_id: "",
         project_name: "",
-        general_objetives: "",
-        specific_objetives: "",
+        general_objectives: "",
+        specific_objectives: "",
         budget: 0,
         start_date: new Date(),
         end_date: new Date(),
@@ -27,13 +27,13 @@ const ProjectRegister = () => {
     })
 
     const onChangeHandler = e => {
-        const { name, value } = e.target;        
-        if (name === "budget"){
+        const { name, value } = e.target;
+        if (name === "budget") {
             setState(prevState => ({
                 ...prevState,
                 [name]: parseInt(value)
             }));
-        }else{
+        } else {
             setState(prevState => ({
                 ...prevState,
                 [name]: value
@@ -54,10 +54,10 @@ const ProjectRegister = () => {
             "project_stage": e.target.value
         }));
     }
-    
+
     // Create Project
     const [createProject, { data: mutationData, loading: mutationLoading, error: mutationError }] =
-    useMutation(POST_PROJECT);
+        useMutation(POST_PROJECT);
 
     const Toast = Swal.mixin({
         toast: true,
@@ -95,15 +95,15 @@ const ProjectRegister = () => {
 
     return (
         <>
-            <Navigation />            
+            <Navigation />
             <div className="container mt-4">
-                <center><h1>Registrar Producto</h1></center>
+                <center><h1>Registrar Proyecto</h1></center>
 
 
-                {/* <form
+                <form
                     onSubmit={SubmitForm}
                     className='flex flex-col items-center justify-center'
-                > */}
+                >
                     <div className="input-group mb-3">
                         <div className="input-group-prepend col-3">
                             <span className="input-group-text" id="inputGroup-sizing-default">ID Proyecto</span>
@@ -115,7 +115,8 @@ const ProjectRegister = () => {
                             aria-label="ID Proyecto"
                             aria-describedby="inputGroup-sizing-default"
                             defaultValue={state.project_id}
-                            onChange={(e)=>onChangeHandler(e)}
+                            onChange={(e) => onChangeHandler(e)}
+                            required
                         />
                     </div>
 
@@ -130,7 +131,8 @@ const ProjectRegister = () => {
                             aria-label="Nombre Proyecto"
                             aria-describedby="inputGroup-sizing-default"
                             defaultValue={state.project_name}
-                            onChange={(e)=>onChangeHandler(e)}
+                            onChange={(e) => onChangeHandler(e)}
+                            required
                         />
                     </div>
 
@@ -140,11 +142,12 @@ const ProjectRegister = () => {
                         </div>
                         <textarea
                             className="form-control"
-                            name="general_objetives"
+                            name="general_objectives"
                             id="exampleFormControlTextarea1"
                             rows="3"
-                            defaultValue={state.general_objetives}
+                            defaultValue={state.general_objectives}
                             onChange={onChangeHandler}
+                            required
                         >
                         </textarea>
                     </div>
@@ -155,10 +158,10 @@ const ProjectRegister = () => {
                         </div>
                         <textarea
                             className="form-control"
-                            name="specific_objetives"
+                            name="specific_objectives"
                             id="exampleFormControlTextarea1"
                             rows="3"
-                            defaultValue={state.specific_objetives}
+                            defaultValue={state.specific_objectives}
                             onChange={onChangeHandler}
                         >
                         </textarea>
@@ -176,6 +179,7 @@ const ProjectRegister = () => {
                             aria-describedby="inputGroup-sizing-default"
                             defaultValue={parseInt(state.budget)}
                             onChange={onChangeHandler}
+                            required
                         />
                     </div>
 
@@ -191,6 +195,7 @@ const ProjectRegister = () => {
                             aria-describedby="inputGroup-sizing-default"
                             defaultValue={state.start_date}
                             onChange={onChangeHandler}
+                            required
                         />
                     </div>
 
@@ -221,6 +226,7 @@ const ProjectRegister = () => {
                             aria-describedby="inputGroup-sizing-default"
                             defaultValue={state.leader_name}
                             onChange={onChangeHandler}
+                            required
                         />
                     </div>
 
@@ -236,6 +242,7 @@ const ProjectRegister = () => {
                             aria-describedby="inputGroup-sizing-default"
                             defaultValue={state.leader_cc}
                             onChange={onChangeHandler}
+                            required
                         />
                     </div>
 
@@ -247,6 +254,7 @@ const ProjectRegister = () => {
                             // value={element.status}
                             defaultValue={state.project_status}
                             onChange={e => onChangeStatus(e)}
+                            required
                         >
                             {
                                 Object.keys(EstadoProyecto).map(estado => {
@@ -264,6 +272,7 @@ const ProjectRegister = () => {
                             // value={element.status}
                             defaultValue={state.project_stage}
                             onChange={e => onChangeStage(e)}
+                            required
                         >
                             {
                                 Object.keys(FaseProyecto).map(estado => {
@@ -271,19 +280,15 @@ const ProjectRegister = () => {
                                 })
                             }
                         </select>
-                    </div>                    
-
-                    <div className="text-center mt-5 mb-5">
-                        <button
-                            type="button"
-                            className="btn btn-primary"
-                            onClick={SubmitForm}
-                        >
-                            Guardar
-                        </button>                        
                     </div>
 
-                {/* </form> */}
+                    <div className="text-center mt-5 mb-5">
+                        <button className="btn btn-primary">
+                            Guardar
+                        </button>
+                    </div>
+
+                </form>
 
 
                 {/* <div className="text-center mt-5">
@@ -295,7 +300,7 @@ const ProjectRegister = () => {
                             }}
                         >
                             check state
-                        </button>                        
+                        </button>
                 </div> */}
 
             </div>

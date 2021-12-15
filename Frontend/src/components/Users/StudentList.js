@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 // Graphql
 import { useQuery, useMutation } from '@apollo/react-hooks';
 import { GET_STUDENTS } from "../../graphql/Users/queries"
-import { UPDATE_USER_STATUS } from "../../graphql/Users/mutations"
+import { UPDATE_USER } from "../../graphql/Users/mutations"
 
 import Navigation from '../Navbar';
 import Swal from 'sweetalert2';
@@ -12,14 +12,14 @@ import Swal from 'sweetalert2';
 import { EstadoUsuario } from '../../utils/enums';
 
 
-const StudentList = () => {   
+const StudentList = () => {
 
     // Get Students
     const { loading, error, data } = useQuery(GET_STUDENTS, { variables: { user_type: "ESTUDIANTE" } });
 
     // Update Student
     const [updateStudent, { data: mutationData, loading: mutationLoading, error: mutationError }] =
-    useMutation(UPDATE_USER_STATUS);
+    useMutation(UPDATE_USER);
 
     const handleStatusStudent = async (e, _id) => {
         e.preventDefault();
