@@ -16,8 +16,8 @@ type Project {
     _id: ID!
     project_id: String!
     project_name: String!
-    general_objetives: String!
-    specific_objetives: String!
+    general_objectives: String!
+    specific_objectives: String!
     budget: Int!
     start_date: Date!
     end_date: Date!
@@ -30,8 +30,8 @@ type Project {
 input ProjectInput {
     project_id: String!
     project_name: String!
-    general_objetives: String!
-    specific_objetives: String!
+    general_objectives: String!
+    specific_objectives: String!
     budget: Int!
     start_date: Date!
     end_date: Date!
@@ -44,8 +44,8 @@ input ProjectInput {
 input ProjectInputUpdate {
     project_id: String
     project_name: String
-    general_objetives: String
-    specific_objetives: String
+    general_objectives: String
+    specific_objectives: String
     budget: Int
     start_date: Date
     end_date: Date

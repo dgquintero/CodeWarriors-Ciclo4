@@ -10,6 +10,9 @@ import RegisterForm from "./components/Users/UserForm";
 import UserList from './components/Users/UserList'
 import StudentList from './components/Users/StudentList'
 import ProjectRegister from './components/Projects/ProjectRegister'
+import LeaderList from './components/Users/LeaderList'
+import ProjectList from './components/Projects/ProjectList'
+import ProjectUpdate from './components/Projects/ProjectUpdate'
 
 function App() {
   return (
@@ -20,7 +23,9 @@ function App() {
         <Route exact path="/Users" element={<UserList/>}/>
         <Route path="/students" element={<StudentList/>}/>
         <Route path="/projects/register" element={<ProjectRegister/>}/>
-
+        <Route path="/projects" element={<LeaderList/>}/>
+        <Route path="/projects/leader/:id" element={<ProjectList/>}/>
+        <Route path="/projects/update/:id" element={<ProjectUpdate/>}/>
 
       </Routes>
     </BrowserRouter>

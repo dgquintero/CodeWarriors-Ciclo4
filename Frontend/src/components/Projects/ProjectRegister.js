@@ -15,8 +15,8 @@ const ProjectRegister = () => {
     const [state, setState] = useState({
         project_id: "",
         project_name: "",
-        general_objetives: "",
-        specific_objetives: "",
+        general_objectives: "",
+        specific_objectives: "",
         budget: 0,
         start_date: new Date(),
         end_date: new Date(),
@@ -97,8 +97,7 @@ const ProjectRegister = () => {
         <>
             <Navigation />            
             <div className="container mt-4">
-                <center><h1>Registrar Producto</h1></center>
-
+                <center><h1>Registrar Proyecto</h1></center>
 
                 {/* <form
                     onSubmit={SubmitForm}
@@ -140,10 +139,10 @@ const ProjectRegister = () => {
                         </div>
                         <textarea
                             className="form-control"
-                            name="general_objetives"
+                            name="general_objectives"
                             id="exampleFormControlTextarea1"
                             rows="3"
-                            defaultValue={state.general_objetives}
+                            defaultValue={state.general_objectives}
                             onChange={onChangeHandler}
                         >
                         </textarea>
@@ -155,10 +154,10 @@ const ProjectRegister = () => {
                         </div>
                         <textarea
                             className="form-control"
-                            name="specific_objetives"
+                            name="specific_objectives"
                             id="exampleFormControlTextarea1"
                             rows="3"
-                            defaultValue={state.specific_objetives}
+                            defaultValue={state.specific_objectives}
                             onChange={onChangeHandler}
                         >
                         </textarea>

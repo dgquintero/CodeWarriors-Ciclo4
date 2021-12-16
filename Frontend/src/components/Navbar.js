@@ -27,7 +27,7 @@ const Navigation = () => {
                                 </a>
                                 <ul className="dropdown-menu" aria-labelledby="navbarDropdown">
                                     <li>
-                                        <Link className="nav-link" to="/Proyectos">Proyectos</Link>
+                                        <Link className="nav-link" to="/projects">Proyectos</Link>
                                     </li>
                                     <li>
                                         <Link className="nav-link" to="/projects/register">Registro</Link>
@@ -38,7 +38,7 @@ const Navigation = () => {
 
 
                             <li className="nav-item">
-                                <Link className="nav-link" to="/Avances">Avances</Link>
+                                <Link className="nav-link" to="/advances">Avances</Link>
                             </li>
 
                             <li className="nav-item">
