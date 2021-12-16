@@ -14,6 +14,9 @@ import LeaderList from './components/Users/LeaderList'
 import ProjectList from './components/Projects/ProjectList'
 import ProjectUpdate from './components/Projects/ProjectUpdate'
 
+import EnrollmentList from './components/Enrollments/EnrollmentList';
+
+
 function App() {
   return (
     <BrowserRouter>      
@@ -21,11 +24,14 @@ function App() {
         <Route exact path="/" element={<Login/>}/>
         <Route exact path="/Register" element={<RegisterForm/>}/>
         <Route exact path="/Users" element={<UserList/>}/>
+        
         <Route path="/students" element={<StudentList/>}/>
         <Route path="/projects/register" element={<ProjectRegister/>}/>
         <Route path="/projects" element={<LeaderList/>}/>
         <Route path="/projects/leader/:id" element={<ProjectList/>}/>
         <Route path="/projects/update/:id" element={<ProjectUpdate/>}/>
+
+        <Route path="/enrollments" element={<EnrollmentList/>}/>
 
       </Routes>
     </BrowserRouter>

@@ -21,4 +21,10 @@ const FaseProyecto = {
     TERMINADO :  'Terminado',
 };
 
-export { Roles, EstadoUsuario, EstadoProyecto, FaseProyecto};
+const EstadoInscripcion = {
+    ACEPTADA: 'Aceptada',
+    RECHAZADA: 'Rechazada',
+    PENDIENTE: 'Pendiente'
+}
+
+export { Roles, EstadoUsuario, EstadoProyecto, FaseProyecto, EstadoInscripcion};
