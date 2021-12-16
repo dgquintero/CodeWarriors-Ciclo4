@@ -11,11 +11,11 @@ const projectSchema = new Schema({
         required: true,
         unique: true,
     },
-    general_objetives: {
+    general_objectives: {
         type: String,
         required: true
     },
-    specific_objetives: {
+    specific_objectives: {
         type: String,
         required: false
     },
